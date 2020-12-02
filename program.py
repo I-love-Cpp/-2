@@ -1,5 +1,7 @@
 import sys
 from random import  randint
+
+from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget, QApplication
 from PyQt5.QtGui import QPainter, QColor, QBrush
 from PyQt5.QtCore import Qt
@@ -12,19 +14,17 @@ class Example(QWidget):
 
     def __init__(self):
         super().__init__()
-
+        uic.loadUi('Ul.ui', self)
         self.initUI()
 
     def initUI(self):
-        self.setGeometry(200, 200, 600, 600)
-        self.setWindowTitle('Colours')
+
 
         self.flag = 0
 
-        self.button = QPushButton(self)
-        self.button.move(30, 30)
-        self.button.resize(100, 50)
-        self.button.clicked.connect(self.refresh)
+        self.pushButton.move(30, 30)
+        self.pushButton.resize(100, 50)
+        self.pushButton.clicked.connect(self.refresh)
 
     def refresh(self):
         self.flag = 1
