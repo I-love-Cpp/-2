@@ -43,6 +43,7 @@ class Example(QWidget):
             x = randint(50, 350)
             y = randint(50, 350)
             rad = randint(3, 50)
+            self.qp.setBrush(QColor(255, 255, 0))
             self.qp.drawEllipse(x - rad, y - rad, x + rad, y + rad)
 
 if __name__ == '__main__':
